@@ -11,6 +11,12 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # Keep compiler and Node types aligned with openapi-typescript and Node 24 LTS.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
     groups:
       compatible-updates:
         update-types: [minor, patch]
