@@ -1,0 +1,14 @@
+name: Proposal
+description: Describe a problem or improvement for discussion
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and evidence
+      description: Product requirements are still being discovered; proposals are not accepted requirements.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Possible approach

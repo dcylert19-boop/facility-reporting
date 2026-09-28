@@ -1,0 +1,15 @@
+{
+  "name": "facility-reporting",
+  "private": true,
+  "packageManager": "pnpm@12.6.0",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"composer --working-dir=apps/api dev\" \"pnpm --dir apps/web dev\"",
+    "check": "composer --working-dir=apps/api check && pnpm --dir apps/web check",
+    "test": "composer --working-dir=apps/api test && pnpm --dir apps/web test:run",
+    "lint": "composer --working-dir=apps/api lint:check && pnpm --dir apps/web lint && pnpm --dir apps/web format:check",
+    "audit": "composer --working-dir=apps/api audit && pnpm audit --audit-level high"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
